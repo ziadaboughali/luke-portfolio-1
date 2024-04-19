@@ -14,15 +14,16 @@ const links = [
 
 const Nav = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
-    <nav className='flex gap-6'>
+    <nav className='flex gap-8'>
       {links.map((link, index) => {
         return (
           <Link
             href={link.path}
             key={index}
-            className={`${link.path === pathname && 'text-accent'} capitalize`}
+            className={`${
+              link.path === pathname && 'text-accent'
+            } capitalize font-medium`}
           >
             {link.name}
           </Link>

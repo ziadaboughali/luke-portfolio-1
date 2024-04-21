@@ -4,6 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-primary font-primary text-white;
+    @apply bg-primary font-primary text-white leading-loose;
+  }
+
+  .h1 {
+    @apply text-[80px] leading-[1.1] font-semibold;
   }
 }

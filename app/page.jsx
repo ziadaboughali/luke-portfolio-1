@@ -1,4 +1,5 @@
 import AnimatedCircle from '@/components/AnimatedCircle';
+import Social from '@/components/Social';
 import { Button } from '@/components/ui/button';
 import { FiDownload } from 'react-icons/fi';
 
@@ -19,14 +20,18 @@ const Home = () => {
               Scelerisque consequat, faucibus et, et. Non semper blandit vitae
               semper blandit.
             </p>
-            <Button
-              variant='outline'
-              size='lg'
-              className='uppercase flex items-center gap-2'
-            >
-              <span>Download CV</span>
-              <FiDownload />
-            </Button>
+            <div className='flex items-center gap-8'>
+              <Button
+                variant='outline'
+                size='lg'
+                className='uppercase flex items-center gap-2'
+              >
+                <span>Download CV</span>
+                <FiDownload />
+              </Button>
+              {/* social */}
+              <Social />
+            </div>
           </div>
           <div>
             {/* <Image src='/photo.png' width={500} height={500} alt='' /> */}

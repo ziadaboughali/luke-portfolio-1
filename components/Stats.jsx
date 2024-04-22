@@ -4,11 +4,11 @@ import CountUp from 'react-countup';
 
 const stats = [
   {
-    num: 3,
+    num: 12,
     text: 'Years of experience',
   },
   {
-    num: 14,
+    num: 26,
     text: 'Projects completed',
   },
   {

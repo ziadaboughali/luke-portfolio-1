@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <section className='h-full'>
       <div className='container mx-auto h-full'>
-        <div className='flex flex-col xl:flex-row items-center justify-between pt-8 pb-16'>
+        <div className='flex flex-col xl:flex-row items-center justify-between pt-8 pb-28'>
           <div>
             <div>Software Developer</div>
             <h1 className='h1 mb-8'>
@@ -28,7 +28,7 @@ const Home = () => {
                 className='uppercase flex items-center gap-2'
               >
                 <span>Download CV</span>
-                <FiDownload />
+                <FiDownload className='text-xl' />
               </Button>
               {/* social */}
               <Social />

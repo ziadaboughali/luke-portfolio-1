@@ -25,8 +25,8 @@ const AnimatedCircle = () => {
         >
           <Image
             src='/photo.png'
-            // width={498}
-            // height={498}
+            priority
+            quality={100}
             alt=''
             fill
             className='object-contain'

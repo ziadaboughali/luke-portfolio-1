@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Nav from './Nav';
+import NavMobile from './NavMobile';
 
 const Header = () => {
   return (
@@ -10,7 +11,14 @@ const Header = () => {
             Luke<span className='text-accent'>.</span>
           </h1>
         </Link>
-        <Nav />
+        {/* desktop nav */}
+        <div className='hidden xl:flex'>
+          <Nav />
+        </div>
+        {/* mobile nav */}
+        <div className='xl:hidden'>
+          <NavMobile />
+        </div>
       </div>
     </header>
   );

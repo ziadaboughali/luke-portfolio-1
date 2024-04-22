@@ -1,5 +1,6 @@
 import AnimatedCircle from '@/components/AnimatedCircle';
 import Social from '@/components/Social';
+import Stats from '@/components/Stats';
 import { Button } from '@/components/ui/button';
 import { FiDownload } from 'react-icons/fi';
 
@@ -7,8 +8,8 @@ const Home = () => {
   return (
     <section className='h-full'>
       <div className='container mx-auto h-full'>
-        <div className='flex flex-col xl:flex-row items-center justify-between'>
-          <div className=''>
+        <div className='flex flex-col xl:flex-row items-center justify-between pt-8 pb-16'>
+          <div>
             <div>Software Developer</div>
             <h1 className='h1 mb-8'>
               Hello I’m
@@ -39,6 +40,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Stats />
     </section>
   );
 };

@@ -1,4 +1,6 @@
 import AnimatedCircle from '@/components/AnimatedCircle';
+import { Button } from '@/components/ui/button';
+import { FiDownload } from 'react-icons/fi';
 
 const Home = () => {
   return (
@@ -12,11 +14,19 @@ const Home = () => {
               <br />
               <span className='text-accent'>Luke Coleman</span>
             </h1>
-            <p className='max-w-[512px]'>
+            <p className='max-w-[512px] mb-8'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Scelerisque consequat, faucibus et, et. Non semper blandit vitae
               semper blandit.
             </p>
+            <Button
+              variant='outline'
+              size='lg'
+              className='uppercase flex items-center gap-2'
+            >
+              <span>Download CV</span>
+              <FiDownload />
+            </Button>
           </div>
           <div>
             {/* <Image src='/photo.png' width={500} height={500} alt='' /> */}

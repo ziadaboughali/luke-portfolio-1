@@ -6,11 +6,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-
+import { CiMenuFries } from 'react-icons/ci';
 const NavMobile = () => {
   return (
     <Sheet>
-      <SheetTrigger>Open</SheetTrigger>
+      <SheetTrigger className='flex justify-center items-center'>
+        <CiMenuFries className='text-[32px] text-accent' />
+      </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Are you absolutely sure?</SheetTitle>

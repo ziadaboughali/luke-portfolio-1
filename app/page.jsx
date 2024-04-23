@@ -8,9 +8,10 @@ const Home = () => {
   return (
     <section className='h-full'>
       <div className='container mx-auto h-full'>
-        <div className='flex flex-col xl:flex-row items-center justify-between pt-8 pb-28'>
-          <div>
-            <div>Software Developer</div>
+        <div className='flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-28'>
+          {/* text */}
+          <div className='order-2 xl:order-none text-center xl:text-left'>
+            <span>Software Developer</span>
             <h1 className='h1 mb-8'>
               Hello I’m
               <br />
@@ -21,7 +22,7 @@ const Home = () => {
               Scelerisque consequat, faucibus et, et. Non semper blandit vitae
               semper blandit.
             </p>
-            <div className='flex items-center gap-8'>
+            <div className='flex flex-col xl:flex-row items-center gap-8'>
               <Button
                 variant='outline'
                 size='lg'
@@ -31,10 +32,12 @@ const Home = () => {
                 <FiDownload className='text-xl' />
               </Button>
               {/* social */}
-              <Social />
+              <div className='mb-8 xl:mb-0'>
+                <Social />
+              </div>
             </div>
           </div>
-          <div>
+          <div className='order-1 xl:order-none mb-8 xl:mb-0'>
             {/* <Image src='/photo.png' width={500} height={500} alt='' /> */}
             <AnimatedCircle />
           </div>

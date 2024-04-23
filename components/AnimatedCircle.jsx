@@ -21,7 +21,7 @@ const AnimatedCircle = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-          className='absolute mix-blend-lighten w-[498px] h-[498px]'
+          className='absolute mix-blend-lighten w-[298px] xl:w-[498px] h-[298px] xl:h-[498px]'
         >
           <Image
             src='/photo.png'
@@ -34,8 +34,9 @@ const AnimatedCircle = () => {
         </motion.div>
 
         <motion.svg
-          width='506'
-          height='506'
+          // width='506'
+          // height='506'
+          className='w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]'
           fill='transparent'
           viewBox='0 0 506 506'
           xmlns='http://www.w3.org/2000/svg'

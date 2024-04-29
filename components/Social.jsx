@@ -8,16 +8,12 @@ const socials = [
   { icon: <FaTwitter />, path: '' },
 ];
 
-const Social = () => {
+const Social = ({ containerStyles, iconStyles }) => {
   return (
-    <div className='flex gap-6'>
+    <div className={containerStyles}>
       {socials.map((social, index) => {
         return (
-          <Link
-            key={index}
-            href={social.path}
-            className='w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500'
-          >
+          <Link key={index} href={social.path} className={iconStyles}>
             {social.icon}
           </Link>
         );

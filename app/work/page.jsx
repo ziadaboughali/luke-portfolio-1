@@ -6,8 +6,20 @@ import 'swiper/css';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
 import { motion } from 'framer-motion';
 
-import { TbBrandNextjs } from 'react-icons/tb';
-import { BiLogoTailwindCss } from 'react-icons/bi';
+import { TbBrandNodejs } from 'react-icons/tb';
+
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
+import { IoLogoHtml5, IoLogoCss3 } from 'react-icons/io';
+import { IoLogoJavascript } from 'react-icons/io5';
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
+import Image from 'next/image';
+
 const projects = [
   {
     category: 'frontend',
@@ -15,31 +27,19 @@ const projects = [
     description: 'Lorem ipsum dolor sit amet, consectetur elit.',
     stack: [
       {
-        icon: <TbBrandNextjs />,
+        icon: <IoLogoHtml5 />,
+        name: 'Html 5',
       },
       {
-        icon: <BiLogoTailwindCss />,
+        icon: <IoLogoCss3 />,
+        name: 'Css 3',
+      },
+      {
+        icon: <IoLogoJavascript />,
+        name: 'Javascript',
       },
     ],
-    links: [
-      {
-        icon: 'github',
-        path: 'http://www.github.com',
-      },
-    ],
-  },
-  {
-    category: 'backend',
-    title: 'project 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur elit.',
-    stack: [
-      {
-        icon: <TbBrandNextjs />,
-      },
-      {
-        icon: <TbBrandNextjs />,
-      },
-    ],
+    image: '/assets/work/thumb1.png',
     links: [
       {
         icon: 'github',
@@ -49,16 +49,45 @@ const projects = [
   },
   {
     category: 'fullstack',
+    title: 'project 2',
+    description: 'Lorem ipsum dolor sit amet, consectetur elit.',
+    stack: [
+      {
+        icon: <SiNextdotjs />,
+        name: 'Next.js',
+      },
+      {
+        icon: <SiTailwindcss />,
+        name: 'Tailwind.js',
+      },
+      {
+        icon: <TbBrandNodejs />,
+        name: 'Node.js',
+      },
+    ],
+    image: '/assets/work/thumb1.png',
+    links: [
+      {
+        icon: 'github',
+        path: 'http://www.github.com',
+      },
+    ],
+  },
+  {
+    category: 'frontend',
     title: 'project 3',
     description: 'Lorem ipsum dolor sit amet, consectetur elit.',
     stack: [
       {
-        icon: <TbBrandNextjs />,
+        icon: <SiNextdotjs />,
+        name: 'Next.js',
       },
       {
-        icon: <TbBrandNextjs />,
+        icon: <SiTailwindcss />,
+        name: 'Tailwind.css',
       },
     ],
+    image: '/assets/work/thumb1.png',
     links: [
       {
         icon: 'github',
@@ -95,17 +124,31 @@ const Work = () => {
             <h3 className='hidden xl:flex uppercase text-6xl leading-tight font-extrabold'>
               My latest projects
             </h3>
-            <div className='bg-accent h-[50%] px-8 text-primary flex flex-col justify-center gap-4'>
-              <h3 className='h3 capitalize'>{project.category}</h3>
-              <h3 className='h3 capitalize'>{project.title}</h3>
-              <p className='leading-none'>{project.description}</p>
-              <div className='flex items-center gap-3'>
-                <div>Stack:</div>
-                <div className='flex gap-2'>
+            <div className='bg-accent h-[50%] px-6 py-8 text-primary flex flex-col justify-center items-center'>
+              <div className='flex flex-col gap-4'>
+                <div className='bg-primary text-white px-4 py-1 max-w-max flex justify-center items-center '>
+                  <p className='text-[15px] uppercase font-semibold tracking-[4px] text-center'>
+                    {project.category} Project
+                  </p>
+                </div>
+                <div>
+                  <h3 className='h3 capitalize font-extrabold mb-2'>
+                    {project.title}
+                  </h3>
+                  <p className='leading-snug'>{project.description}</p>
+                </div>
+                <div className='flex items-center gap-4'>
                   {project.stack.map((item, index) => {
                     return (
-                      <div className='text-4xl' key={index}>
-                        {item.icon}
+                      <div className='flex text-4xl text-primary' key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger>{item.icon}</TooltipTrigger>
+                            <TooltipContent>
+                              <p>{item.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
                       </div>
                     );
                   })}
@@ -122,7 +165,15 @@ const Work = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide className='w-full' key={index}>
-                  <div className='h-[460px] bg-white/5'>{project.title}</div>
+                  <div className='h-[460px] bg-white/5 relative'>
+                    <div>{project.title}</div>
+                    <Image
+                      src={project.image}
+                      width={300}
+                      height={300}
+                      alt=''
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
               <WorkSliderBtns

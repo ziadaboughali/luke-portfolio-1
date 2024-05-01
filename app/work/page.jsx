@@ -7,10 +7,10 @@ import WorkSliderBtns from '@/components/WorkSliderBtns';
 import { motion } from 'framer-motion';
 
 import { TbBrandNodejs } from 'react-icons/tb';
-
 import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 import { IoLogoHtml5, IoLogoCss3 } from 'react-icons/io';
 import { IoLogoJavascript } from 'react-icons/io5';
+import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
 import {
   Tooltip,
@@ -19,6 +19,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -40,12 +41,8 @@ const projects = [
       },
     ],
     image: '/assets/work/thumb1.png',
-    links: [
-      {
-        icon: 'github',
-        path: 'http://www.github.com',
-      },
-    ],
+    live: '',
+    github: '',
   },
   {
     category: 'fullstack',
@@ -66,12 +63,8 @@ const projects = [
       },
     ],
     image: '/assets/work/thumb1.png',
-    links: [
-      {
-        icon: 'github',
-        path: 'http://www.github.com',
-      },
-    ],
+    live: '',
+    github: '',
   },
   {
     category: 'frontend',
@@ -88,12 +81,8 @@ const projects = [
       },
     ],
     image: '/assets/work/thumb1.png',
-    links: [
-      {
-        icon: 'github',
-        path: 'http://www.github.com',
-      },
-    ],
+    live: '',
+    github: '',
   },
 ];
 
@@ -165,14 +154,45 @@ const Work = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide className='w-full' key={index}>
-                  <div className='h-[460px] bg-white/5 relative'>
-                    <div>{project.title}</div>
-                    <Image
-                      src={project.image}
-                      width={300}
-                      height={300}
-                      alt=''
-                    />
+                  <div className='h-[460px] relative group flex justify-center items-center'>
+                    {/* overlay */}
+                    {/* group-hover:backdrop-blur-sm */}
+                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/50 z-40 group-hover:bg-black/80  transition-all'></div>
+                    <div className='relative w-full h-full'>
+                      <Image
+                        src={project.image}
+                        fill
+                        className='object-cover'
+                        alt=''
+                      />
+                    </div>
+                    {/* btns */}
+                    <div className='absolute z-50 flex gap-4'>
+                      <Link href={project.github}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white scale-0 group-hover:scale-100 transition-all duration-500 flex justify-center items-center hover:rotate-45 hover:bg-accent  hover:text-white'>
+                              <BsGithub className='text-primary text-3xl' />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Github repo</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </Link>
+                      <Link href={project.live}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white scale-0 group-hover:scale-100 transition-all duration-500 flex justify-center items-center hover:rotate-45 hover:bg-accent hover:text-white'>
+                              <BsArrowUpRight className='text-primary text-3xl' />
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Live project</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </Link>
+                    </div>
                   </div>
                 </SwiperSlide>
               ))}

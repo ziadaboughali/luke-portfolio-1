@@ -5,14 +5,9 @@ const experience = {
   title: 'My experience',
   items: [
     {
-      company: 'Tech Solutions Inc.',
-      position: 'Full Stack Developer',
-      duration: '2022 - Present',
-    },
-    {
       company: 'Web Design Studio',
       position: 'Front-End Developer Intern',
-      duration: 'Summer 2021',
+      duration: 'Summer 2021 - Present',
     },
     {
       company: 'E-commerce Startup',
@@ -32,19 +27,14 @@ const education = {
   title: 'My education',
   items: [
     {
-      institution: 'Online Course Platform',
-      degree: 'Full Stack Bootcamp',
-      duration: '2023',
-    },
-    {
       institution: 'Codecademy',
       degree: 'Front-end Track',
-      duration: '2020',
+      duration: '2022',
     },
     {
       institution: 'Online Course',
       degree: 'Programming Course',
-      duration: '2019 - 2020',
+      duration: '2020 - 2021',
     },
     {
       institution: 'Tech Institute',
@@ -56,11 +46,11 @@ const education = {
 
 const Resume = () => {
   return (
-    <section className='min-h-[90vh] flex flex-col justify-center py-12'>
+    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
         <div className='grid grid-cols-1 xl:grid-cols-2 gap-[30px]'>
           <div>
-            <div className='flex items-center gap-8 mb-12 h-[80px]'>
+            <div className='flex items-center gap-8 mb-10 h-[80px]'>
               <Image src={experience.icon} width={40} height={40} alt='' />
               <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
                 {experience.title}
@@ -73,8 +63,8 @@ const Resume = () => {
                     key={index}
                     className='border border-white/10 px-8 py-6 rounded-md min-h-[160px] flex flex-col gap-2'
                   >
-                    <p className='text-accent text-xl'>{item.duration}</p>
-                    <h4 className='text-2xl uppercase font-bold tracking-[1.2px]'>
+                    <p className='text-accent text-lg'>{item.duration}</p>
+                    <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
                       {item.position}
                     </h4>
                     <p className='text-white/60 text-lg leading-normal'>
@@ -86,7 +76,7 @@ const Resume = () => {
             </div>
           </div>
           <div>
-            <div className='flex items-center gap-8 mb-12 h-[80px]'>
+            <div className='flex items-center gap-8 mb-10 h-[80px]'>
               <Image src={education.icon} width={40} height={40} alt='' />
               <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
                 {education.title}
@@ -99,8 +89,8 @@ const Resume = () => {
                     key={index}
                     className='border border-white/10 px-8 py-6 rounded-md min-h-[160px] flex flex-col gap-2'
                   >
-                    <p className='text-accent text-xl'>{item.duration}</p>
-                    <h4 className='text-2xl uppercase font-bold tracking-[1.2px]'>
+                    <p className='text-accent text-lg'>{item.duration}</p>
+                    <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
                       {item.degree}
                     </h4>
                     <p className='text-white/60 text-lg leading-normal'>

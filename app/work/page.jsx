@@ -132,13 +132,26 @@ const Work = () => {
               {/* border */}
               <div className='border border-white/20'></div>
               {/* btns */}
-              <div>
+              <div className='flex items-center gap-4'>
                 {/* tooltip btn */}
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white flex justify-center items-center'>
-                        <BsGithub className='text-primary text-4xl' />
+                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
+                        <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Live project</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+                {/* tooltip btn */}
+                <Link href={project.github}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
+                        <BsGithub className='text-white text-3xl group-hover:text-accent' />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Github repository</p>
@@ -160,22 +173,21 @@ const Work = () => {
                 <SwiperSlide className='w-full' key={index}>
                   <div className='h-[460px] relative group flex justify-center items-center'>
                     {/* overlay */}
-                    {/* group-hover:backdrop-blur-sm */}
-                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/50 z-40 group-hover:bg-black/80  transition-all'></div>
+                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/30 z-10'></div>
                     <div className='relative w-full h-full'>
-                      <Image
+                      {/* <Image
                         src={project.image}
                         fill
                         className='object-cover'
                         alt=''
-                      />
+                      /> */}
                     </div>
                   </div>
                 </SwiperSlide>
               ))}
               <WorkSliderBtns
-                containerStyles='flex gap-2 absolute right-0 bottom-[calc(50%_-_20px)] xl:-bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none'
-                btnStyles='bg-accent text-primary text-xl w-[40px] h-[40px] flex justify-center items-center'
+                containerStyles='flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:-bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none'
+                btnStyles='bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all'
               />
             </Swiper>
           </div>

@@ -1,53 +1,69 @@
+'use client';
 import Image from 'next/image';
 import React from 'react';
 
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaPhp,
+  FaWordpress,
+  FaFigma,
+  FaNodeJs,
+  FaSketch,
+} from 'react-icons/fa';
+
+import { RiNextjsFill } from 'react-icons/ri';
+import { SiTailwindcss, SiStrapi } from 'react-icons/si';
+
 const skills = [
   {
-    icon: '/assets/skills/html.svg',
+    icon: <FaHtml5 />,
     name: 'html 5',
   },
   {
-    icon: '/assets/skills/css.svg',
+    icon: <FaCss3 />,
     name: 'css 3',
   },
   {
-    icon: '/assets/skills/js.svg',
+    icon: <FaJs />,
     name: 'javascript',
   },
   {
-    icon: '/assets/skills/react.svg',
+    icon: <FaReact />,
     name: 'react.js',
   },
+  // {
+  //   icon: <RiNextjsFill />,
+  //   name: 'next.js',
+  // },
+  // {
+  //   icon: <SiTailwindcss />,
+  //   name: 'tailwind.css',
+  // },
   {
-    icon: '/assets/skills/next.svg',
-    name: 'next.js',
-  },
-  {
-    icon: '/assets/skills/tailwind.svg',
-    name: 'tailwind.css',
-  },
-  {
-    icon: '/assets/skills/html.svg',
+    icon: <FaPhp />,
     name: 'html 5',
   },
   {
-    icon: '/assets/skills/css.svg',
+    icon: <FaWordpress />,
     name: 'css 3',
   },
   {
-    icon: '/assets/skills/js.svg',
+    icon: <FaFigma />,
     name: 'javascript',
   },
   {
-    icon: '/assets/skills/react.svg',
+    icon: <FaNodeJs />,
     name: 'react.js',
   },
   {
-    icon: '/assets/skills/next.svg',
+    icon: <FaSketch />,
     name: 'next.js',
   },
   {
-    icon: '/assets/skills/tailwind.svg',
+    icon: <SiStrapi />,
     name: 'tailwind.css',
   },
 ];
@@ -62,11 +78,15 @@ const Skills = () => {
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-[30px]'>
           {skills.map((skill, index) => {
             return (
-              <div key={index} className='text-center'>
+              <div key={index} className='text-center group'>
                 <div className='bg-[#232329] h-[180px] rounded-xl flex items-center justify-center mb-4'>
-                  <Image src={skill.icon} width={60} height={60} alt='' />
+                  <div className='text-white/30 text-5xl group-hover:text-accent transition-all'>
+                    {skill.icon}
+                  </div>
                 </div>
-                <h4 className='capitalize text-accent'>{skill.name}</h4>
+                <h4 className='capitalize group-hover:text-accent transition-all'>
+                  {skill.name}
+                </h4>
               </div>
             );
           })}

@@ -6,10 +6,6 @@ import 'swiper/css';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
 import { motion } from 'framer-motion';
 
-import { TbBrandNodejs } from 'react-icons/tb';
-import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
-import { IoLogoHtml5, IoLogoCss3 } from 'react-icons/io';
-import { IoLogoJavascript } from 'react-icons/io5';
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 
 import {
@@ -18,7 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 const projects = [

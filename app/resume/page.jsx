@@ -61,7 +61,7 @@ const Resume = () => {
                 return (
                   <div
                     key={index}
-                    className='border border-white/10 px-8 py-6 rounded-md min-h-[160px] flex flex-col gap-2'
+                    className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
                   >
                     <p className='text-accent text-lg'>{item.duration}</p>
                     <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
@@ -87,7 +87,7 @@ const Resume = () => {
                 return (
                   <div
                     key={index}
-                    className='border border-white/10 px-8 py-6 rounded-md min-h-[160px] flex flex-col gap-2'
+                    className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
                   >
                     <p className='text-accent text-lg'>{item.duration}</p>
                     <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>

@@ -14,8 +14,7 @@ import {
   FaSketch,
 } from 'react-icons/fa';
 
-import { RiNextjsFill } from 'react-icons/ri';
-import { SiTailwindcss, SiStrapi } from 'react-icons/si';
+import { SiTailwindcss, SiStrapi, SiNextdotjs } from 'react-icons/si';
 
 const skills = [
   {
@@ -34,14 +33,18 @@ const skills = [
     icon: <FaReact />,
     name: 'react.js',
   },
-  // {
-  //   icon: <RiNextjsFill />,
-  //   name: 'next.js',
-  // },
-  // {
-  //   icon: <SiTailwindcss />,
-  //   name: 'tailwind.css',
-  // },
+  {
+    icon: <SiNextdotjs />,
+    name: 'next.js',
+  },
+  {
+    icon: <SiTailwindcss />,
+    name: 'tailwind.css',
+  },
+  {
+    icon: <FaNodeJs />,
+    name: 'react.js',
+  },
   {
     icon: <FaPhp />,
     name: 'html 5',
@@ -51,26 +54,23 @@ const skills = [
     name: 'css 3',
   },
   {
-    icon: <FaFigma />,
-    name: 'javascript',
+    icon: <SiStrapi />,
+    name: 'tailwind.css',
   },
-  {
-    icon: <FaNodeJs />,
-    name: 'react.js',
-  },
+
   {
     icon: <FaSketch />,
     name: 'next.js',
   },
   {
-    icon: <SiStrapi />,
-    name: 'tailwind.css',
+    icon: <FaFigma />,
+    name: 'javascript',
   },
 ];
 
 const Skills = () => {
   return (
-    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
+    <section className='min-h-[75vh] flex flex-col justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
         <h2 className='text-[42px] font-bold capitalize text-center mb-8'>
           My skills
@@ -80,7 +80,7 @@ const Skills = () => {
             return (
               <div key={index} className='text-center group'>
                 <div className='bg-[#232329] h-[180px] rounded-xl flex items-center justify-center mb-4'>
-                  <div className='text-white/30 text-5xl group-hover:text-accent transition-all'>
+                  <div className='text-white/20 text-5xl group-hover:text-accent transition-all'>
                     {skill.icon}
                   </div>
                 </div>

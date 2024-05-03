@@ -44,67 +44,160 @@ const education = {
   ],
 };
 
+// maybe use the icons below but first try with figma svgs from the design
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaPhp,
+  FaWordpress,
+  FaFigma,
+  FaNodeJs,
+  FaSketch,
+} from 'react-icons/fa';
+
+import { SiTailwindcss, SiStrapi, SiNextdotjs } from 'react-icons/si';
+
+const skills = [
+  {
+    icon: <FaHtml5 />,
+    name: 'html 5',
+  },
+  {
+    icon: <FaCss3 />,
+    name: 'css 3',
+  },
+  {
+    icon: <FaJs />,
+    name: 'javascript',
+  },
+  {
+    icon: <FaReact />,
+    name: 'react.js',
+  },
+  {
+    icon: <SiNextdotjs />,
+    name: 'next.js',
+  },
+  {
+    icon: <SiTailwindcss />,
+    name: 'tailwind.css',
+  },
+  {
+    icon: <FaNodeJs />,
+    name: 'react.js',
+  },
+  {
+    icon: <FaPhp />,
+    name: 'html 5',
+  },
+  {
+    icon: <FaWordpress />,
+    name: 'css 3',
+  },
+  {
+    icon: <SiStrapi />,
+    name: 'tailwind.css',
+  },
+
+  {
+    icon: <FaSketch />,
+    name: 'next.js',
+  },
+  {
+    icon: <FaFigma />,
+    name: 'javascript',
+  },
+];
+
+import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 const Resume = () => {
   return (
-    <section className='min-h-[80vh] flex flex-col justify-center py-12 xl:py-0'>
+    <section className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
-        <div className='grid grid-cols-1 xl:grid-cols-2 gap-[30px]'>
-          <div>
-            <div className='flex items-center gap-8 mb-10 h-[80px]'>
-              <Image src={experience.icon} width={40} height={40} alt='' />
-              <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-                {experience.title}
-              </h2>
-            </div>
-            <div className='flex flex-col gap-6'>
-              {experience.items.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
-                  >
-                    <p className='text-accent text-lg'>{item.duration}</p>
-                    <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
-                      {item.position}
-                    </h4>
-                    <p className='text-white/60 text-lg leading-normal'>
-                      {item.company}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div>
-            <div className='flex items-center gap-8 mb-10 h-[80px]'>
-              <Image src={education.icon} width={40} height={40} alt='' />
-              <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-                {education.title}
-              </h2>
-            </div>
-            <div className='flex flex-col gap-6'>
-              {education.items.map((item, index) => {
-                return (
-                  <div
-                    key={index}
-                    className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
-                  >
-                    <p className='text-accent text-lg'>{item.duration}</p>
-                    <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
-                      {item.degree}
-                    </h4>
-                    <p className='text-white/60 text-lg leading-normal'>
-                      {item.institution}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        <Tabs defaultValue='about' className='flex gap-[40px]'>
+          <TabsList className='flex flex-col w-[40%] gap-6'>
+            <TabsTrigger value='about' className='bg-accent w-full'>
+              About me
+            </TabsTrigger>
+            <TabsTrigger value='experience' className='bg-accent w-full'>
+              Experience
+            </TabsTrigger>
+            <TabsTrigger value='education' className='bg-accent w-full'>
+              Education
+            </TabsTrigger>
+            <TabsTrigger value='skills' className='bg-accent w-full'>
+              Skills
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value='about'>about</TabsContent>
+          <TabsContent value='experience'>experience</TabsContent>
+          <TabsContent value='education'>education</TabsContent>
+          <TabsContent value='skills'>skills</TabsContent>
+        </Tabs>
       </div>
     </section>
   );
 };
 
 export default Resume;
+
+{
+  /* <div className='grid grid-cols-1 xl:grid-cols-2 gap-[30px]'>
+  <div>
+    <div className='flex items-center gap-8 mb-10 h-[80px]'>
+      <Image src={experience.icon} width={40} height={40} alt='' />
+      <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
+        {experience.title}
+      </h2>
+    </div>
+    <div className='flex flex-col gap-6'>
+      {experience.items.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
+          >
+            <p className='text-accent text-lg'>{item.duration}</p>
+            <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
+              {item.position}
+            </h4>
+            <p className='text-white/60 text-lg leading-normal'>
+              {item.company}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+  <div>
+    <div className='flex items-center gap-8 mb-10 h-[80px]'>
+      <Image src={education.icon} width={40} height={40} alt='' />
+      <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
+        {education.title}
+      </h2>
+    </div>
+    <div className='flex flex-col gap-6'>
+      {education.items.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
+          >
+            <p className='text-accent text-lg'>{item.duration}</p>
+            <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
+              {item.degree}
+            </h4>
+            <p className='text-white/60 text-lg leading-normal'>
+              {item.institution}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>; */
+}

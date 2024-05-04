@@ -118,21 +118,21 @@ const Resume = () => {
   return (
     <section className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
-        <Tabs defaultValue='about' className='flex gap-[40px]'>
-          <TabsList className='flex flex-col w-[40%] gap-6'>
-            <TabsTrigger value='about' className='bg-accent w-full'>
-              About me
-            </TabsTrigger>
-            <TabsTrigger value='experience' className='bg-accent w-full'>
-              Experience
-            </TabsTrigger>
-            <TabsTrigger value='education' className='bg-accent w-full'>
-              Education
-            </TabsTrigger>
-            <TabsTrigger value='skills' className='bg-accent w-full'>
-              Skills
-            </TabsTrigger>
+        {/* <h2 className='h2 mb-4'>Why hire me?</h2>
+        <p className='mb-12'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p> */}
+        <Tabs
+          defaultValue='about'
+          className='flex flex-col xl:flex-row gap-[30px]'
+        >
+          <TabsList className='flex flex-col md:w-[40%] xl:w-[30%] md:mx-auto xl:mx-0 gap-4'>
+            <TabsTrigger value='about'>About me</TabsTrigger>
+            <TabsTrigger value='experience'>Experience</TabsTrigger>
+            <TabsTrigger value='education'>Education</TabsTrigger>
+            <TabsTrigger value='skills'>Skills</TabsTrigger>
           </TabsList>
+
           <TabsContent value='about'>about</TabsContent>
           <TabsContent value='experience'>experience</TabsContent>
           <TabsContent value='education'>education</TabsContent>

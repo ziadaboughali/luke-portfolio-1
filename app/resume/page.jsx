@@ -174,16 +174,15 @@ const Resume = () => {
   return (
     <section className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
-        <h2 className='h2 mb-4'>Why hire me?</h2>
-        <p className='mb-12'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-
         <Tabs
           defaultValue='about'
           className='flex flex-col xl:flex-row gap-[60px]'
         >
-          <TabsList className='flex flex-col md:w-[40%] xl:w-[30%] md:mx-auto xl:mx-0 gap-6'>
+          <TabsList className='flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6'>
+            <h2 className='h2 mb-4 text-white'>Why hire me?</h2>
+            <p className='mb-12'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
             <TabsTrigger value='about'>About me</TabsTrigger>
             <TabsTrigger value='experience'>Experience</TabsTrigger>
             <TabsTrigger value='education'>Education</TabsTrigger>

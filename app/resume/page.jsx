@@ -1,9 +1,64 @@
 import Image from 'next/image';
 
+const about = {
+  title: 'About me',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.',
+  info: [
+    {
+      fieldName: 'Name',
+      fieldValue: 'Luke Coleman',
+    },
+    {
+      fieldName: 'Phone',
+      fieldValue: '(+40) 321 654 876',
+    },
+    {
+      fieldName: 'Experience',
+      fieldValue: '12+ Years',
+    },
+    {
+      fieldName: 'Skype',
+      fieldValue: 'luke.01',
+    },
+    {
+      fieldName: 'Nationality',
+      fieldValue: 'American',
+    },
+    {
+      fieldName: 'Email',
+      fieldValue: 'luke.01@gmail.com',
+    },
+    {
+      fieldName: 'Freelance',
+      fieldValue: 'Available',
+    },
+    {
+      fieldName: 'Languages',
+      fieldValue: 'English, Spanish',
+    },
+  ],
+};
+
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
   items: [
+    {
+      company: 'Web Design Studio',
+      position: 'Front-End Developer Intern',
+      duration: 'Summer 2021 - Present',
+    },
+    {
+      company: 'E-commerce Startup',
+      position: 'Freelance Web Developer',
+      duration: '2020 - 2021',
+    },
+    {
+      company: 'Tech Academy',
+      position: 'Teaching Assistant',
+      duration: '2019 - 2020',
+    },
     {
       company: 'Web Design Studio',
       position: 'Front-End Developer Intern',
@@ -44,21 +99,7 @@ const education = {
   ],
 };
 
-// maybe use the icons below but first try with figma svgs from the design
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaPhp,
-  FaWordpress,
-  FaFigma,
-  FaNodeJs,
-  FaSketch,
-} from 'react-icons/fa';
-
-import { SiTailwindcss, SiStrapi, SiNextdotjs } from 'react-icons/si';
-
+// ???
 const skills = [
   {
     icon: <FaHtml5 />,
@@ -111,6 +152,21 @@ const skills = [
   },
 ];
 
+// maybe use the icons below but first try with figma svgs from the design
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaPhp,
+  FaWordpress,
+  FaFigma,
+  FaNodeJs,
+  FaSketch,
+} from 'react-icons/fa';
+
+import { SiTailwindcss, SiStrapi, SiNextdotjs } from 'react-icons/si';
+
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -118,25 +174,47 @@ const Resume = () => {
   return (
     <section className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'>
       <div className='container mx-auto'>
-        {/* <h2 className='h2 mb-4'>Why hire me?</h2>
+        <h2 className='h2 mb-4'>Why hire me?</h2>
         <p className='mb-12'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p> */}
+        </p>
+
         <Tabs
           defaultValue='about'
-          className='flex flex-col xl:flex-row gap-[30px]'
+          className='flex flex-col xl:flex-row gap-[60px]'
         >
-          <TabsList className='flex flex-col md:w-[40%] xl:w-[30%] md:mx-auto xl:mx-0 gap-4'>
+          <TabsList className='flex flex-col md:w-[40%] xl:w-[30%] md:mx-auto xl:mx-0 gap-6'>
             <TabsTrigger value='about'>About me</TabsTrigger>
             <TabsTrigger value='experience'>Experience</TabsTrigger>
             <TabsTrigger value='education'>Education</TabsTrigger>
             <TabsTrigger value='skills'>Skills</TabsTrigger>
           </TabsList>
 
-          <TabsContent value='about'>about</TabsContent>
-          <TabsContent value='experience'>experience</TabsContent>
-          <TabsContent value='education'>education</TabsContent>
-          <TabsContent value='skills'>skills</TabsContent>
+          <TabsContent value='about' className='w-full'>
+            <div className='flex flex-col gap-[30px]'>
+              <h3 className='text-4xl font-bold'>{about.title}</h3>
+              <p className='max-w-[600px]'>{about.description}</p>
+              <ul className='grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-[620px]'>
+                {about.info.map((item, index) => {
+                  return (
+                    <li className='flex items-center gap-4' key={index}>
+                      <span className='text-white/60'>{item.fieldName}</span>
+                      <span className='text-xl'>{item.fieldValue}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </TabsContent>
+          <TabsContent value='experience' className='bg-pink-50/10 w-full'>
+            experience
+          </TabsContent>
+          <TabsContent value='education' className='bg-pink-50/10 w-full'>
+            education
+          </TabsContent>
+          <TabsContent value='skills' className='bg-pink-50/10 w-full'>
+            skills
+          </TabsContent>
         </Tabs>
       </div>
     </section>

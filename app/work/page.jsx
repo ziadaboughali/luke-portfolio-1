@@ -1,10 +1,10 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
-import { motion } from 'framer-motion';
 
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
 

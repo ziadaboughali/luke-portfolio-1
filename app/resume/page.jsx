@@ -1,3 +1,14 @@
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+} from 'react-icons/fa';
+
+import { SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+
 const about = {
   title: 'About me',
   description:
@@ -113,7 +124,6 @@ const education = {
   ],
 };
 
-// ???
 const skills = [
   {
     icon: <FaHtml5 />,
@@ -141,46 +151,21 @@ const skills = [
   },
   {
     icon: <FaNodeJs />,
-    name: 'react.js',
-  },
-  {
-    icon: <FaPhp />,
-    name: 'html 5',
-  },
-  {
-    icon: <FaWordpress />,
-    name: 'css 3',
-  },
-  {
-    icon: <SiStrapi />,
-    name: 'tailwind.css',
-  },
-
-  {
-    icon: <FaSketch />,
-    name: 'next.js',
+    name: 'node.js',
   },
   {
     icon: <FaFigma />,
-    name: 'javascript',
+    name: 'figma',
   },
 ];
 
-// maybe use the icons below but first try with figma svgs from the design
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaPhp,
-  FaWordpress,
-  FaFigma,
-  FaNodeJs,
-  FaSketch,
-} from 'react-icons/fa';
-
-import { SiTailwindcss, SiStrapi, SiNextdotjs } from 'react-icons/si';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 
 const Resume = () => {
   return (
@@ -247,8 +232,30 @@ const Resume = () => {
                 })}
               </ul>
             </TabsContent>
-            <TabsContent value='skills' className='bg-pink-50/10 w-full'>
-              skills
+            {/* skills */}
+            <TabsContent value='skills' className='w-full h-full'>
+              {/* <div className='flex flex-col justify-center h-full'> */}
+              <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
+                {skills.map((skill, index) => {
+                  return (
+                    <li className='' key={index}>
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center'>
+                            <div className='text-6xl group-hover:text-accent'>
+                              {skill.icon}
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className='capitalize'>{skill.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  );
+                })}
+              </ul>
+              {/* </div> */}
             </TabsContent>
             {/* about */}
             <TabsContent

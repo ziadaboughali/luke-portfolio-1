@@ -12,7 +12,7 @@ const TabsList = React.forwardRef(({ className, ...props }, ref) => (
     ref={ref}
     className={cn(
       // removed bg-slate-100 h-auto justify-center items-center
-      'inline-flex h-auto  rounded-md p-1 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
+      'inline-flex h-auto rounded-md p-1 text-slate-500 dark:bg-slate-800 dark:text-slate-400',
       className
     )}
     {...props}
@@ -37,8 +37,9 @@ const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      // min-h-[480px]
-      'mt-2 min-h-[480px] ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
+      // added min-h-[480px]
+      // removed mt-2
+      'min-h-[480px] ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300',
       className
     )}
     {...props}

@@ -162,7 +162,7 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className='xl:h-[520px]'
+              className='xl:h-[520px] mb-12'
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => (

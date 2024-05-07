@@ -124,40 +124,45 @@ const education = {
   ],
 };
 
-const skills = [
-  {
-    icon: <FaHtml5 />,
-    name: 'html 5',
-  },
-  {
-    icon: <FaCss3 />,
-    name: 'css 3',
-  },
-  {
-    icon: <FaJs />,
-    name: 'javascript',
-  },
-  {
-    icon: <FaReact />,
-    name: 'react.js',
-  },
-  {
-    icon: <SiNextdotjs />,
-    name: 'next.js',
-  },
-  {
-    icon: <SiTailwindcss />,
-    name: 'tailwind.css',
-  },
-  {
-    icon: <FaNodeJs />,
-    name: 'node.js',
-  },
-  {
-    icon: <FaFigma />,
-    name: 'figma',
-  },
-];
+const skills = {
+  title: 'My skills',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.',
+  skillList: [
+    {
+      icon: <FaHtml5 />,
+      name: 'html 5',
+    },
+    {
+      icon: <FaCss3 />,
+      name: 'css 3',
+    },
+    {
+      icon: <FaJs />,
+      name: 'javascript',
+    },
+    {
+      icon: <FaReact />,
+      name: 'react.js',
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: 'next.js',
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: 'tailwind.css',
+    },
+    {
+      icon: <FaNodeJs />,
+      name: 'node.js',
+    },
+    {
+      icon: <FaFigma />,
+      name: 'figma',
+    },
+  ],
+};
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
@@ -235,8 +240,12 @@ const Resume = () => {
             {/* skills */}
             <TabsContent value='skills' className='w-full h-full'>
               {/* <div className='flex flex-col justify-center h-full'> */}
+              <h3 className='text-4xl font-bold'>{skills.title}</h3>
+              <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>
+                {skills.description}
+              </p>
               <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
-                {skills.map((skill, index) => {
+                {skills.skillList.map((skill, index) => {
                   return (
                     <li className='' key={index}>
                       <TooltipProvider delayDuration={100}>

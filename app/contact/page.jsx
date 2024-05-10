@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -31,13 +33,22 @@ const info = [
   },
 ];
 
+import { motion } from 'framer-motion';
+
 const Contact = () => {
   return (
-    <section className='py-12'>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
+      }}
+      className='py-6'
+    >
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row gap-[30px]'>
           <div className='xl:w-[54%]'>
-            <form className='flex flex-col gap-6 px-10 py-12 bg-[#27272C] rounded-xl'>
+            <form className='flex flex-col gap-6 p-10 bg-[#27272C] rounded-xl'>
               <h3 className='text-4xl text-accent'>Let's work together</h3>
               <p className='text-white/60'>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -90,7 +101,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

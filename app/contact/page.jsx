@@ -18,7 +18,7 @@ const Contact = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col lg:flex-row gap-[30px]'>
           <div className='xl:w-[54%]'>
-            <form className='flex flex-col gap-6 px-10 py-12 bg-[#232329] rounded-xl'>
+            <form className='flex flex-col gap-6 px-10 py-12 bg-[#27272C] rounded-xl'>
               <h3 className='text-4xl font-bold'>Let's work together</h3>
               <p className='text-white/60'>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -44,17 +44,15 @@ const Contact = () => {
                 </SelectContent>
               </Select>
               <Textarea
-                className='h-[200px] text-primary'
+                className='h-[200px]'
                 placeholder='Type your message here.'
               />
-              <Button>Send message</Button>
-              {/* <div className='flex flex-col lg:flex-row gap-[30px]'>
-              </div>
-              <div className='flex flex-col lg:flex-row gap-[30px]'>
-              </div> */}
+              <Button size='md' className='max-w-40'>
+                Send message
+              </Button>
             </form>
           </div>
-          <div className='flex-1'>2</div>
+          <div className='flex-1'></div>
         </div>
       </div>
     </section>

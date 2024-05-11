@@ -52,13 +52,13 @@ const AnimatedCircle = () => {
             initial={{ strokeDasharray: '24 10 0 0' }}
             animate={{
               strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
-              rotate: [120, 360], // Add rotation for extra cool effect
+              rotate: [120, 360], // add rotation for extra cool effect
             }}
             transition={{
               duration: 20,
               repeat: Infinity,
               repeatType: 'reverse',
-            }} // Increased duration for slower motion
+            }} // increased duration for slower motion
           />
         </motion.svg>
       </motion.div>

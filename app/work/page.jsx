@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
+import WorkSliderBtns from '@/components/WorkSliderBtns';
 
 import {
   Tooltip,
@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/tooltip';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -56,7 +57,7 @@ const projects = [
         name: 'Node.js',
       },
     ],
-    image: '/assets/work/thumb1.png',
+    image: '/assets/work/thumb2.png',
     live: '',
     github: '',
   },
@@ -74,7 +75,7 @@ const projects = [
         name: 'Tailwind.css',
       },
     ],
-    image: '/assets/work/thumb1.png',
+    image: '/assets/work/thumb3.png',
     live: '',
     github: '',
   },
@@ -169,14 +170,14 @@ const Work = () => {
                 <SwiperSlide className='w-full' key={index}>
                   <div className='h-[460px] relative group flex justify-center items-center'>
                     {/* overlay */}
-                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/30 z-10'></div>
+                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
                     <div className='relative w-full h-full'>
-                      {/* <Image
+                      <Image
                         src={project.image}
                         fill
                         className='object-cover'
                         alt=''
-                      /> */}
+                      />
                     </div>
                   </div>
                 </SwiperSlide>

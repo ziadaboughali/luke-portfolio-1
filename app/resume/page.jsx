@@ -1,4 +1,5 @@
 "use client";
+
 import {
   FaHtml5,
   FaCss3,
@@ -10,10 +11,11 @@ import {
 
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 
+// about data
 const about = {
   title: "About me",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   info: [
     {
       fieldName: "Name",
@@ -21,7 +23,7 @@ const about = {
     },
     {
       fieldName: "Phone",
-      fieldValue: "(+40) 321 654 876",
+      fieldValue: "(+40) 321 654 678",
     },
     {
       fieldName: "Experience",
@@ -50,11 +52,12 @@ const about = {
   ],
 };
 
+// experience data
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
     {
       company: "Tech Solutions Inc.",
@@ -89,11 +92,12 @@ const experience = {
   ],
 };
 
+// education data
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   items: [
     {
       institution: "Online Course Platform",
@@ -115,7 +119,6 @@ const education = {
       degree: "Certified Web Developer",
       duration: "2019",
     },
-
     {
       institution: "Design School",
       degree: "Diploma in Graphic Design",
@@ -129,10 +132,11 @@ const education = {
   ],
 };
 
+// skills data
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -170,6 +174,7 @@ const skills = {
 };
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import {
   Tooltip,
   TooltipContent,
@@ -178,13 +183,11 @@ import {
 } from "@/components/ui/tooltip";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { CgScrollV } from "react-icons/cg";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const Resume = () => {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
@@ -198,17 +201,13 @@ const Resume = () => {
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <h2 className="h2 mb-2 text-white text-center xl:text-left">
-              Why hire me?
-            </h2>
-            <p className="mb-4 text-white/60 p-0 text-center xl:text-left">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
+
+          {/* content */}
           <div className="min-h-[70vh] w-full">
             {/* experience */}
             <TabsContent value="experience" className="w-full">
@@ -222,14 +221,15 @@ const Resume = () => {
                     {experience.items.map((item, index) => {
                       return (
                         <li
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                           key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.position}
                           </h3>
                           <div className="flex items-center gap-3">
+                            {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
                           </div>
@@ -240,6 +240,7 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             {/* education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
@@ -252,14 +253,15 @@ const Resume = () => {
                     {education.items.map((item, index) => {
                       return (
                         <li
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                           key={index}
+                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.degree}
                           </h3>
                           <div className="flex items-center gap-3">
+                            {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.institution}</p>
                           </div>
@@ -270,9 +272,9 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+
             {/* skills */}
             <TabsContent value="skills" className="w-full h-full">
-              {/* <div className='flex flex-col justify-center h-full'> */}
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
@@ -301,8 +303,8 @@ const Resume = () => {
                   })}
                 </ul>
               </div>
-              {/* </div> */}
             </TabsContent>
+
             {/* about */}
             <TabsContent
               value="about"
@@ -317,8 +319,8 @@ const Resume = () => {
                   {about.info.map((item, index) => {
                     return (
                       <li
-                        className="flex items-center justify-center xl:justify-start gap-4"
                         key={index}
+                        className="flex items-center justify-center xl:justify-start gap-4"
                       >
                         <span className="text-white/60">{item.fieldName}</span>
                         <span className="text-xl">{item.fieldValue}</span>
@@ -331,65 +333,8 @@ const Resume = () => {
           </div>
         </Tabs>
       </div>
-    </motion.section>
+    </motion.div>
   );
 };
 
 export default Resume;
-
-{
-  /* <div className='grid grid-cols-1 xl:grid-cols-2 gap-[30px]'>
-  <div>
-    <div className='flex items-center gap-8 mb-10 h-[80px]'>
-      <Image src={experience.icon} width={40} height={40} alt='' />
-      <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-        {experience.title}
-      </h2>
-    </div>
-    <div className='flex flex-col gap-6'>
-      {experience.items.map((item, index) => {
-        return (
-          <div
-            key={index}
-            className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
-          >
-            <p className='text-accent text-lg'>{item.duration}</p>
-            <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
-              {item.position}
-            </h4>
-            <p className='text-white/60 text-lg leading-normal'>
-              {item.company}
-            </p>
-          </div>
-        );
-      })}
-    </div>
-  </div>
-  <div>
-    <div className='flex items-center gap-8 mb-10 h-[80px]'>
-      <Image src={education.icon} width={40} height={40} alt='' />
-      <h2 className='text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize'>
-        {education.title}
-      </h2>
-    </div>
-    <div className='flex flex-col gap-6'>
-      {education.items.map((item, index) => {
-        return (
-          <div
-            key={index}
-            className='border border-white/5 px-8 py-6 rounded-xl min-h-[160px] flex flex-col gap-2 hover:border-accent transition-all duration-300'
-          >
-            <p className='text-accent text-lg'>{item.duration}</p>
-            <h4 className='text-xl uppercase font-bold tracking-[1.2px]'>
-              {item.degree}
-            </h4>
-            <p className='text-white/60 text-lg leading-normal'>
-              {item.institution}
-            </p>
-          </div>
-        );
-      })}
-    </div>
-  </div>
-</div>; */
-}

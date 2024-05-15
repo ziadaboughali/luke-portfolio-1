@@ -1,7 +1,6 @@
 "use client";
 
 import { BsArrowDownRight } from "react-icons/bs";
-
 import Link from "next/link";
 
 const services = [
@@ -9,29 +8,28 @@ const services = [
     num: "01",
     title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
     href: "",
   },
   {
     num: "02",
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
     href: "",
   },
   {
     num: "03",
     title: "Logo Design",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
     href: "",
   },
-
   {
     num: "04",
     title: "SEO",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque consequat, faucibus et, et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
     href: "",
   },
 ];
@@ -42,11 +40,6 @@ const Services = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
-        {/* <h2 className='h2 text-center xl:text-left mb-8 xl:mb-16'>
-          My Services<span className='text-accent'>.</span>
-        </h2> */}
-
-        {/* grid */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -59,10 +52,11 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="flex-1 flex flex-col justify-center group gap-6"
+                className="flex-1 flex flex-col justify-center gap-6 group"
               >
+                {/* top */}
                 <div className="w-full flex justify-between items-center">
-                  <div className="text-5xl font-extrabold text-transparent text-outline group-hover:text-outline-hover transition-all duration-500">
+                  <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                     {service.num}
                   </div>
                   <Link
@@ -72,11 +66,14 @@ const Services = () => {
                     <BsArrowDownRight className="text-primary text-3xl" />
                   </Link>
                 </div>
+                {/* title */}
                 <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                   {service.title}
                 </h2>
+                {/* description */}
                 <p className="text-white/60">{service.description}</p>
-                <div className="w-full border-b border-white/20"></div>
+                {/* border */}
+                <div className="border-b border-white/20 w-full"></div>
               </div>
             );
           })}
